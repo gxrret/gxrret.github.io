@@ -1,307 +1,79 @@
+<style>
+  body {
+    font-family: 'Avenir', Helvetica, Roboto, Arial;
+    max-width: 500px;
+    width: 95%;
+ }
+  p, li {
+    font-size: 1.05em;
+    line-height: 1.5em;
+  }
+  blockquote {
+    margin: 0 18px 18px 18px;
+    line-height: 1.2em;
+    padding-left: 10px;
+    border-left: 4px solid #eee;
+    text-align: justify;
+    font-family: 'Inconsolata', monospace;
+  }
+  .item {
+    transition: 200ms linear all;
+    color: #666;
+  }
+  .item:hover {
+    color: black;
+  }
+  a {
+    text-decoration: none;
+    margin-top: .1rem;
+    border-bottom-style: solid;
+    border-width: .1rem;
+    transition: 200ms linear all;
+    border-color: 'blue';
+    opacity: 1;
+  }
+  a:visited{
+    color:blue;
+  }
+  a:hover {
+    cursor: pointer;
+    color: red;
+    border-color: red;
+  }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107690801-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-        gtag('config', 'UA-107690801-1');
-    </script>
-    <meta charset="utf-8">
-    <title>Destin Raymundo</title>
-    <meta name="author" content="Destin Raymundo">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-	<script type="text/javascript" src="jquery.scrollintoview.min.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  .content {
+  margin: 8px;
+  padding-bottom: 2em;
+  }
+  .hide {
+  display: none;
+  }
+  .host {
+  color: #828282;
+  padding-left: 0.25em;
+  user-select: none;
+  -webkit-user-select: none;
+  }
+  .more {
+    font-size: 1.25em;
+    float: right;
+  }
+  .more a {
+    color: #828282;
+    text-decoration: none;
+    border-width: 0px;
+    font-style: italic;
+    transition: 200ms linear all;
+  }
+  .more a:hover {
+    font-weight: bold;
+    border-width: .1rem;
+  }
+  </style>
 </head>
 <body>
-    <header>
-        <a id="goto-bannerBG" class="logo">DESTIN RAYMUNDO</a>
-        <nav>
-			<!-- cancel bubble stops onclick form propagating to children -->
-            <div id="hamburger-icon" class="hamburger" onclick="changeHamburger(this);toggleDropdown();event.cancelBubble=true">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-            </div>
-        	<div id="dropMenu" class="dropdownContent">
-				<a id="goto-aboutme">ABOUT</a>
-				<a id="goto-work">EXPERIENCE</a>
-				<a id="goto-projects">PROJECTS</a>
-				<a id="goto-contact">CONTACT</a>
-        	</div>
-            <ul>
-				<li><a id="goto-aboutme">ABOUT</a></li>
-				<li><a id="goto-work">EXPERIENCE</a></li>
-				<li><a id="goto-projects">PROJECTS</a></li>
-				<li><a id="goto-contact">CONTACT</a></li>
-            </ul>
-		</nav>
-    </header>
-    <div id="bannerBG">
-		<div id="logo-wrapper">
-			<!--<img src="imgs/logo.svg" alt="banner">-->
-		</div>
-    </div>
-    <div id="aboutme">
-		<div id="about-wrapper">
-			<div class="about-block">
-				<div class="about-icon" id="icon-about"></div>
-				<div class="about-text">
-					<h2>ABOUT</h2>
-					<p>
-				I’m Destin Raymundo. I’m an engineer, a hacker, and a creative. I’ve been fortunate enough to work with great people on some exciting projects; each of which fostering a more resilient work ethic and a keen intuition. I enjoy breeding new ideas inside my head, but I like bringing them to life even more. I have an affinity for creating things and am always looking forward to the next project. 
-					</p>
-				</div>
-			</div>
-			<div class="about-block">
-				<div class="about-icon" id="icon-education"></div>
-				<div class="about-text">
-					<h2>EDUCATION</h2>
-					<p>
-					I go to school at UCLA and will graduate with a B.S. in Computer Science by September 2018. I carry a 3.8 GPA, and most of my coursework covers OS principles, systems programming, algorithms and data structures, databases, programming language theory, and UNIX. Through school assignments, I’ve gained experience in C, C++, Python, and Bash.
-					</p>
-				</div>
-			</div>
-			<div class="about-block">
-				<div class="about-icon" id="icon-developer"></div>
-				<div class="about-text">
-					<h2>DEVELOPER</h2>
-					<p>
-					Outside of school, I’ve done my own projects, participated in a few hackathons, worked in professional settings, and acquired working experience in Python, Swift, HTML, CSS, and JavaScript. I am not shy to new technologies, and am devoted to building cool things.<br>Vim > Emacs.
-					</p>
-				</div>
-			</div>
-			<div class="about-block">
-				<div class="about-icon" id="icon-designer"></div>
-				<div class="about-text">
-					<h2>DESIGNER</h2>
-					<p>
-					I’ve been designing for about six years, and have created things from t-shirts and yearbooks, to large-scale concert artwork. Illustrator, Photoshop, and After Effects are my go-to media, and I’ve done print design, web design, animations, and videos. I’m meticulous in how I compose my designs and always stay up to date on trending aesthetics. 
-					</p>
-				</div>
-			</div>
-		</div>
-    </div>
-    <div id="work">
-		<h1>EXPERIENCE</h1>
-		<div class="my-work-info-card">
-			<div id="my-work-img-belkin" class="my-work-img-left"></div>
-			<div class="my-work-text-right">
-				<h2>SOFTWARE ENGINEERING INTERN<h2>
-				<h3>Belkin International | September 2017-Present</h3>
-				<p>
-				As an intern for Belkin, I am currently working with the WeMo team on building a suite of UI tests for the WeMo iOS app. WeMo is Belkin’s brand of smart devices that can control home electronics and utilities using just a home’s Wi-Fi network. The WeMo mobile app is the virtual hub for all device control and is a key component in using WeMo products. I am developing test scripts using the latest tools available in Xcode 9 and Swift 4.
-				</p>
-			</div>
-			<div class="my-work-btn">
-				<a href="http://www.belkin.com/us/" target="_blank"><h4>VISIT WEBSITE</h4></a>
-			</div>
-		</div>
-		<div class="my-work-info-card">
-			<div id="my-work-img-alexa" class="my-work-img-right"></div>
-			<div class="my-work-text-left">
-				<h2>AMAZON ALEXA DEVELOPER<h2>
-				<h3>Independent | June 2017-Present</h3>
-				<p>
-				The Amazon Alexa platform allows developers to build apps in JavaScript, called skills, for the cloud-based Alexa service. I’ve built and released five different Alexa skills, which integrate a number of Amazon Web Service (AWS) and third-party API’s to deliver unique content. While developing skills, I encountered and overcame issues regarding asynchronous programming, API key security, and data persistence between sessions. I have about 35 unique users interact with my skills per week, and am always finding ways to bring new ideas to the platform.
-				</p>
-			</div>
-			<div class="my-work-btn">
-				<a href="https://developer.amazon.com/alexa" target="_blank"><h4>LEARN MORE</h4></a>
-			</div>
-		</div>
-		<div class="my-work-info-card">
-			<div id="my-work-img-aspb" class="my-work-img-left"></div>
-			<div class="my-work-text-right">
-				<h2>DIRECTOR OF MARKETING<h2>
-				<h3>UC Riverside ASPB | August 2015-June 2016</h3>
-				<p>
-				As a Director of Marketing for UCR’s Associated Students Program Board, I led the design and marketing for various small and large scale campus events. I frequently collaborated with different members of my 15-person team to evaluate marketing strategies and to brainstorm eye-catching designs. Since events ranged from small speaking engagements to concerts with over 12,000 in attendance, I had many opportunities to assemble my skills in Illustrator, Photoshop, and After Effects to generate unique content tailored to each event.
-				</p>
-			</div>
-			<div class="my-work-btn">
-				<a href="http://aspb.ucr.edu/" target="_blank"><h4>VISIT WEBSITE</h4></a>
-			</div>
-		</div>
-	</div>
-	<div id="projects">
-		<h1>PROJECTS</h1>
-		<h5>SELECT A PROJECT TO LEARN MORE</h5>
-		<div class="projects-grid-wrapper">
-			<div class="projects-grid">
-				<div class="col-1">
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>GIF GURU</h4>
-								<p>
-								GIF Guru is an Alexa skill that leverages the Giphy API to search for and deliver GIF images to user’s phones. It uses Amazon S3 to secure sensitive information using at-rest encryption, Amazon DynamoDB to associate phone numbers with Echo devices for data persistence, and Amazon SNS to text resulting GIF’s to users. All API calls were asynchronous and were chained together using promise objects.
-								</p>
-								<div class="img-hider-footer">
-									<a href="https://www.amazon.com/dp/B0752FRX75/" target="_blank"><h6>Skill Page</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-gif.png" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>MY BOXING COACH</h4>
-								<p>
-								My Boxing Coach is a skill that allows Alexa to voice out boxing commands to users. This skill is great for boxers of all levels to practice when they don’t have the luxury of a class, coach, or partner. The user can tell Alexa pre or mid-interaction how many rounds they would like to do. Each round consists of combinations that increase in difficulty, but no two rounds are the same. My Boxing Coach boasts the highest usage rate of all my skills with over 120 unique users per month. </p>
-								<div class="img-hider-footer">
-									<a href="https://www.amazon.com/adrayv-My-Boxing-Coach/dp/B0745B95TV" target="_blank"><h6>SKILL PAGE</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-boxing.jpg" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>NOONERS</h4>
-								<p>Nooners are a weekly series of mini concerts where small-name artists, such as KR, Mike Gao, and LostBoyCrow, performed for our student body. I designed all marketing materials which included posters, handbills, and other promotional items. Using After Effects, I animated the lineup drop video for our social media. Check it out below!</p>
-								<div class="img-hider-footer">
-									<a href="https://www.youtube.com/watch?v=6Sfhi7ynDy0" target="_blank"><h6>VIDEO</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-nooner.png" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>WINTER SOULSTICE</h4>
-								<p>Winter Soulstice is UCR’s annual R&B concert, with about 1,500 students in attendance every year. In the past, we’ve featured artists such as Omarion, Yuna, Doja Cat, Kelela, The Dream, Ginuwine, Kehlani, and more. I led all the design work as well as filmed and edited the event recap video.
-								</p>
-								<div class="img-hider-footer">
-									<a href="https://www.facebook.com/events/445655102311417/?acontext=%7B%22source%22%3A3%2C%22source_newsfeed_story_type%22%3A%22regular%22%2C%22action_history%22%3A%22[%7B%5C%22surface%5C%22%3A%5C%22newsfeed%5C%22%2C%5C%22mechanism%5C%22%3A%5C%22feed_story%5C%22%2C%5C%22extra_data%5C%22%3A[]%7D]%22%2C%22has_source%22%3Atrue%7D&source=3&source_newsfeed_story_type=regular&action_history=[%7B%22surface%22%3A%22newsfeed%22%2C%22mechanism%22%3A%22feed_story%22%2C%22extra_data%22%3A[]%7D]&has_source=1&fref=mentions" target="_blank"><h6>EVENT PAGE</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-winter-soul.jpg" class="projects-img" align="top">
-					</div>
-				</div>
-				<div class="col-2">
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>SPRING SPLASH</h4>
-								<p>
-								Spring Splash is UCR’s end of the year concert where artists such as DJ Snake, Trey Songz, Ty Dolla $ign, T-Pain, RL Grime, DJ Mustard, Flosstradamus, Pusha T, Vince Staples, and 2 Chainz, perform for over 13,000 students annually. Being lead marketer, I designed the artwork and established design standards for my fellow marketers to follow.
-								</p>
-								<div class="img-hider-footer">
-									<a href="https://www.facebook.com/events/485504958311448/" target="_blank"><h6>EVENT PAGE</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-ss.jpg" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>ASPB 30th YEAR</h4>
-								<p>ASPB’s 30th year anniversary was an event commemorating 30 years of my organization’s presence on campus. I designed the artwork for the entire event as well as the graphics for some promotional t-shirts we gave away.
-								</p>
-								<div class="img-hider-footer">
-									<a href="https://www.facebook.com/events/1691550257779100/" target="_blank"><h6>EVENT PAGE</h6></a>
-								</div>
-							</div>
-						</div>
-						<img src="imgs/projects-aspb-30th.png" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>THE LAST LAUGH</h4>
-								<p>The Last Laugh is UCR’s annual comedy show event. While the event was cancelled due to bad weather, I co-designed the marketing items and artwork.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-last-laugh.jpg" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>ASPB STAFF SHIRT</h4>
-								<p>I designed the staff shirt that was used by the 70+ members of the 2015-2016 Associated Students Program Board.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-aspb-front.png" class="projects-img" align="top">
-					</div>
-				</div>
-				<div class="col-3">
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>K. WYNN'S BIRTHDAY</h4>
-								<p>I was subcontracted to design the party logo for Kevyn Wynn’s 50th birthday. Kevyn Wynn is the daughter of Steve Wynn, CEO of the Las Vegas Wynn resorts. The logo design was inspired from the Studio 54 Theatre Company.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-wynn.jpg" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>ARTIST FEATURES</h4>
-								<p>In addition to poster artwork for ASPB, I also designed artist features such as this one to highlight individual performers on our social media.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-ws-alt.jpg" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>UCLA DESIGN CONTEST</h4>
-								<p>This is my design for a t-shirt contest hosted by UCLA’s student union. The building depicted is UCLA’s renowned Royce Hall.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-ucla-contest.png" class="projects-img" align="top">
-					</div>
-					<div class="projects-img-wrapper">
-						<div class="img-hider" onclick="toggleProjectItem(this.firstElementChild)">
-							<div class="project-info">
-								<h4>RIEBER FLOOR SHIRT</h4>
-								<p>When I lived on campus at UCLA, my RA voiced the need for a floor shirt that all members of Rieber Hall’s seventh floor could wear. My design was chosen but ultimately never went into production because of shirt costs. Our floor was Disney themed.
-								</p>
-							</div>
-						</div>
-						<img src="imgs/projects-ucla-rieber.png" class="projects-img" align="top">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="contact">
-		<h1>WANT TO WORK TOGETHER?</h1>
-		<div id="form-wrapper">
-			<form action="https://formspree.io/destin.raymundo@gmail.com" method="POST">
-				<input type="text" id="form-name" name="name" placeholder="NAME">
-				<input type="text" id="form-email" name="email" placeholder="EMAIL">
-				<textarea id="form-message" name="message" placeholder="MESSAGE"></textarea>
-				<button type="submit" id="form-submit">SUBMIT</button>
-			</form>
-		</div>
-	</div>
-	<div id="links">
-		<div id="logo-small"></div>
-		<h4>MADE BY DESTIN &copy; 2017</h4>
-		<div id="links-wrapper">
-			<a href="https://github.com/adrayv" target="_blank"><div class="link-icon" id="link-github"></div></a>
-			<a href="https://www.instagram.com/destinvraymundo/" target="_blank"><div class="link-icon" id="link-insta"></div></a>
-			<a href="https://www.linkedin.com/in/destinraymundo/" target="_blank"><div class="link-icon" id="link-linkedin"></div></a>
-			<a href="docs/DestinRaymundoResume.pdf" target="_blank"><div class="link-icon" id="link-resume"></div></a>
-		</div>
-	</div>
-</body>
-</html>
+	<div class="content">
+<h1>Garret Koontz</h1>
+<p>I live in Southern California and work on <a href="https://appstore.com/bookmeappointmentmanager">BookMe</a>.</p>
+<p>I enjoy streetwear, sneakers, and playing with code.</p>
+<p><em>Want to get in touch? Feel free to email me at <a href="mailto:koontzgarret@gmail.com">koontzgarret@gmail.com</a>.</em></p>
